@@ -40,11 +40,11 @@ const AccountProfile = props => {
   const classes = useStyles();
 
   const user = {
-    name: 'Shen Zhi',
-    city: 'Los Angeles',
-    country: 'USA',
-    timezone: 'GTM-7',
-    avatar: '/images/avatars/avatar_11.png'
+    name: 'User name',
+    city: 'Accra',
+    country: 'Ghana',
+    timezone: 'GTM-00',
+    avatar: 'https://elparah.store/admin/upload/no_image.png'
   };
 
   return (
@@ -59,7 +59,7 @@ const AccountProfile = props => {
               gutterBottom
               variant="h2"
             >
-              John Doe
+                {user.name}
             </Typography>
             <Typography
               className={classes.locationText}

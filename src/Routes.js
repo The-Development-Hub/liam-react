@@ -5,16 +5,18 @@ import { RouteWithLayout } from './components';
 import { Main as MainLayout, Minimal as MinimalLayout } from './layouts';
 
 import {
-  Dashboard as DashboardView,
-  ProductList as ProductListView,
-  UserList as UserListView,
-  Typography as TypographyView,
-  Icons as IconsView,
-  Account as AccountView,
-  Settings as SettingsView,
-  SignUp as SignUpView,
-  SignIn as SignInView,
-  NotFound as NotFoundView
+    Dashboard as DashboardView,
+    ProductList as ProductListView,
+    AssetsList as AssetsListView,
+    CourseView as CourseView,
+    UserList as UserListView,
+    Typography as TypographyView,
+    Icons as IconsView,
+    Account as AccountView,
+    Settings as SettingsView,
+    SignUp as SignUpView,
+    SignIn as SignInView,
+    NotFound as NotFoundView,
 } from './views';
 
 const Routes = () => {
@@ -41,8 +43,20 @@ const Routes = () => {
         component={ProductListView}
         exact
         layout={MainLayout}
-        path="/products"
+        path="/courses"
       />
+        <RouteWithLayout
+            component={CourseView}
+            exact
+            layout={MainLayout}
+            path="/course-single"
+        />
+        <RouteWithLayout
+            component={AssetsListView}
+            exact
+            layout={MainLayout}
+            path="/store"
+        />
       <RouteWithLayout
         component={TypographyView}
         exact

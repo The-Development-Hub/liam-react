@@ -7,6 +7,7 @@ import { AppBar, Toolbar, Badge, Hidden, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
+import Logo  from '../../../../assets/img/liam-logo-white.png';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -36,12 +37,13 @@ const Topbar = props => {
         <RouterLink to="/">
           <img
             alt="Logo"
-            src="/images/logos/logo--white.svg"
+            src={Logo}
+            style={{width: "170px" , height : "50px"}}
           />
         </RouterLink>
         <div className={classes.flexGrow} />
         <Hidden mdDown>
-          <IconButton color="inherit">
+          {/*<IconButton color="inherit">
             <Badge
               badgeContent={notifications.length}
               color="primary"
@@ -49,7 +51,7 @@ const Topbar = props => {
             >
               <NotificationsIcon />
             </Badge>
-          </IconButton>
+          </IconButton>*/}
           <IconButton
             className={classes.signOutButton}
             color="inherit"

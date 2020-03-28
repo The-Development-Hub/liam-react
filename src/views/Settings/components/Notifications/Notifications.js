@@ -42,7 +42,7 @@ const Notifications = props => {
         <CardContent>
           <Grid
             container
-            spacing={6}
+            spacing={4}
             wrap="wrap"
           >
             <Grid

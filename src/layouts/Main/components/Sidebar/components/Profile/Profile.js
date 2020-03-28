@@ -27,9 +27,9 @@ const Profile = props => {
   const classes = useStyles();
 
   const user = {
-    name: 'Shen Zhi',
+    name: 'User name',
     avatar: '/images/avatars/avatar_11.png',
-    bio: 'Brain Director'
+    bio: 'Short user bio..'
   };
 
   return (
@@ -41,8 +41,9 @@ const Profile = props => {
         alt="Person"
         className={classes.avatar}
         component={RouterLink}
-        src={user.avatar}
+        src={'https://elparah.store/admin/upload/no_image.png'}
         to="/settings"
+        style={{width: "60px" , height : "60px" , borderRadius: "100%"}}
       />
       <Typography
         className={classes.name}

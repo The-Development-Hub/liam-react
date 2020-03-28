@@ -6,7 +6,7 @@ import { Notifications, Password } from './components';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(4)
+    padding: theme.spacing(2)
   }
 }));
 
@@ -17,18 +17,18 @@ const Settings = () => {
     <div className={classes.root}>
       <Grid
         container
-        spacing={4}
+        spacing={3}
       >
         <Grid
           item
-          md={7}
+          md={6}
           xs={12}
         >
           <Notifications />
         </Grid>
         <Grid
           item
-          md={5}
+          md={6}
           xs={12}
         >
           <Password />
