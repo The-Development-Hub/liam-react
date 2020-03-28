@@ -50,7 +50,7 @@ const LatestProducts = props => {
     >
       <CardHeader
         subtitle={`${products.length} in total`}
-        title="Latest products"
+        title="Latest assets"
       />
       <Divider />
       <CardContent className={classes.content}>
@@ -69,7 +69,7 @@ const LatestProducts = props => {
               </ListItemAvatar>
               <ListItemText
                 primary={product.name}
-                secondary={`Updated ${product.updatedAt.fromNow()}`}
+                secondary={`Published ${product.updatedAt.fromNow()}`}
               />
               <IconButton
                 edge="end"
@@ -87,6 +87,7 @@ const LatestProducts = props => {
           color="primary"
           size="small"
           variant="text"
+          /*onclick={}*/
         >
           View all <ArrowRightIcon />
         </Button>

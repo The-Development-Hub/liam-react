@@ -24,16 +24,16 @@ const Footer = props => {
         &copy;{' '}
         <Link
           component="a"
-          href="https://devias.io/"
+          href="#"
           target="_blank"
         >
-          Devias IO
+          COVID BREAKERS
         </Link>
         . 2019
       </Typography>
       <Typography variant="caption">
-        Created with love for the environment. By designers and developers who
-        love to work together in offices!
+        Created with love in aid for students. By designers and developers who
+        love to work together all over the world!
       </Typography>
     </div>
   );

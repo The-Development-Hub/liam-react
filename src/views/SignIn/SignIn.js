@@ -238,13 +238,13 @@ const SignIn = props => {
                 >
                   Sign in
                 </Typography>
-                <Typography
+                {/*<Typography
                   color="textSecondary"
                   gutterBottom
                 >
                   Sign in with social media
-                </Typography>
-                <Grid
+                </Typography>*/}
+                {/*<Grid
                   className={classes.socialButtons}
                   container
                   spacing={2}
@@ -270,14 +270,14 @@ const SignIn = props => {
                       Login with Google
                     </Button>
                   </Grid>
-                </Grid>
+                </Grid>*/}
                 <Typography
                   align="center"
                   className={classes.sugestion}
                   color="textSecondary"
                   variant="body1"
                 >
-                  or login with email address
+                  Sign in with email address
                 </Typography>
                 <TextField
                   className={classes.textField}

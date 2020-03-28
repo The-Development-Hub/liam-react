@@ -12,26 +12,26 @@ import {
 } from '@material-ui/core';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import GetAppIcon from '@material-ui/icons/GetApp';
+import Views from '@material-ui/icons/Visibility';
 
 const useStyles = makeStyles(theme => ({
   root: {},
   imageContainer: {
-    height: 64,
-    width: 64,
-    margin: '0 auto',
+    height: 150,
+    width: '100%',
+    margin: '0 0',
     border: `1px solid ${theme.palette.divider}`,
     borderRadius: '5px',
     overflow: 'hidden',
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: 'left'
   },
   image: {
     width: '100%'
   },
   statsItem: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'left'
   },
   statsIcon: {
     color: theme.palette.icon,
@@ -61,6 +61,8 @@ const ProductCard = props => {
           align="center"
           gutterBottom
           variant="h4"
+          style={{paddingTop: "12px"}}
+          /* onclick={}*/
         >
           {product.title}
         </Typography>
@@ -68,7 +70,7 @@ const ProductCard = props => {
           align="center"
           variant="body1"
         >
-          {product.description}
+            {product.description}
         </Typography>
       </CardContent>
       <Divider />
@@ -93,12 +95,12 @@ const ProductCard = props => {
             className={classes.statsItem}
             item
           >
-            <GetAppIcon className={classes.statsIcon} />
+            <Views className={classes.statsIcon} />
             <Typography
               display="inline"
               variant="body2"
             >
-              {product.totalDownloads} Downloads
+              {product.totalDownloads} Views
             </Typography>
           </Grid>
         </Grid>

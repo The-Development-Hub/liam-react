@@ -62,9 +62,9 @@ const Budget = props => {
               gutterBottom
               variant="body2"
             >
-              LIAMS OBTAINED
+              DIGITAL ASSETS
             </Typography>
-            <Typography variant="h3">L 24,000</Typography>
+            <Typography variant="h3">16</Typography>
           </Grid>
           <Grid item>
             <Avatar className={classes.avatar}>
@@ -72,7 +72,7 @@ const Budget = props => {
             </Avatar>
           </Grid>
         </Grid>
-        <div className={classes.difference}>
+        {/*<div className={classes.difference}>
           <ArrowDownwardIcon className={classes.differenceIcon} />
           <Typography
             className={classes.differenceValue}
@@ -86,7 +86,7 @@ const Budget = props => {
           >
             Since last month
           </Typography>
-        </div>
+        </div>*/}
       </CardContent>
     </Card>
   );

@@ -4,7 +4,6 @@ import { Grid } from '@material-ui/core';
 
 import {
   Budget,
-  TotalUsers,
   TasksProgress,
   TotalProfit,
   LatestSales,
@@ -29,33 +28,33 @@ const Dashboard = () => {
         spacing={4}
       >
         <Grid
+              item
+              lg={3}
+              sm={6}
+              xl={3}
+              xs={12}
+          >
+              <TotalProfit />
+          </Grid>
+        <Grid
           item
-          lg={4}
-          sm={8}
-          xl={4}
-          xs={16}
+          lg={3}
+          sm={6}
+          xl={3}
+          xs={12}
         >
           <Budget />
         </Grid>
         <Grid
           item
-          lg={4}
-          sm={8}
-          xl={4}
-          xs={16}
-        >
-          <TotalUsers />
-        </Grid>
-        <Grid
-          item
-          lg={4}
-          sm={8}
-          xl={4}
-          xs={16}
+          lg={3}
+          sm={6}
+          xl={3}
+          xs={12}
         >
           <TasksProgress />
         </Grid>
-        
+
         <Grid
           item
           lg={8}

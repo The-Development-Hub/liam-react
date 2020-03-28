@@ -58,7 +58,7 @@ const UsersByDevice = props => {
         hoverBorderColor: theme.palette.white
       }
     ],
-    labels: ['Desktop', 'Tablet', 'Mobile']
+    labels: ['Likes', 'Courses', 'Sales']
   };
 
   const options = {
@@ -85,20 +85,20 @@ const UsersByDevice = props => {
 
   const devices = [
     {
-      title: 'Desktop',
-      value: '63',
+      title: 'Likes',
+      value: '15',
       icon: <LaptopMacIcon />,
       color: theme.palette.primary.main
     },
     {
-      title: 'Tablet',
-      value: '15',
+      title: 'Courses',
+      value: '63',
       icon: <TabletMacIcon />,
       color: theme.palette.error.main
     },
     {
-      title: 'Mobile',
-      value: '23',
+      title: 'Sales',
+      value: '33',
       icon: <PhoneIphoneIcon />,
       color: theme.palette.warning.main
     }
@@ -115,7 +115,7 @@ const UsersByDevice = props => {
             <RefreshIcon />
           </IconButton>
         }
-        title="Users By Device"
+        title="Liams Breakdown (%)"
       />
       <Divider />
       <CardContent>

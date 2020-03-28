@@ -23,12 +23,12 @@ const AccountDetails = props => {
   const classes = useStyles();
 
   const [values, setValues] = useState({
-    firstName: 'Shen',
-    lastName: 'Zhi',
-    email: 'shen.zhi@devias.io',
+    firstName: '',
+    lastName: '',
+    email: '',
     phone: '',
-    state: 'Alabama',
-    country: 'USA'
+    state: '',
+    country: ''
   });
 
   const handleChange = event => {
