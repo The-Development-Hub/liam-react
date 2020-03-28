@@ -8,13 +8,12 @@ import PeopleIcon from '@material-ui/icons/People';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import TextFieldsIcon from '@material-ui/icons/TextFields';
 import ImageIcon from '@material-ui/icons/Image';
+import VideoIcon from '@material-ui/icons/VideoLibrary';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 
-
-
-import { Profile, SidebarNav, UpgradePlan } from './components';
+import { Profile, SidebarNav} from './components';
 
 const useStyles = makeStyles(theme => ({
   drawer: {
@@ -51,31 +50,25 @@ const Sidebar = props => {
       icon: <DashboardIcon />
     },
     {
-      title: 'Profile',
-      href: '/profile',
-      icon: <PeopleIcon />
+      title: 'Courses',
+      href: '/courses',
+      icon: <VideoIcon />
     },
     {
-      title: 'Digital Store',
+      title: 'Store',
       href: '/store',
       icon: <ShoppingBasketIcon />
     },
-    
-    
     {
-      title: 'Videos',
-      href: '/videos',
-      icon: <ImageIcon />
+      title: 'Account',
+      href: '/account',
+      icon: <AccountBoxIcon />
     },
-    
-  ];
-  const pageSub = [
     {
-      title: 'Support',
-      href: '/support',
-      icon: <DashboardIcon />
+      title: 'Logout',
+      href: '/sign-in',
+      icon: <LockOpenIcon />
     },
-    
   ];
 
   return (
@@ -95,16 +88,12 @@ const Sidebar = props => {
         <SidebarNav
           className={classes.nav}
           pages={pages}
-          
         />
-        <Divider className={classes.divider} />
-       
-        
+
       </div>
     </Drawer>
   );
 };
-
 
 Sidebar.propTypes = {
   className: PropTypes.string,

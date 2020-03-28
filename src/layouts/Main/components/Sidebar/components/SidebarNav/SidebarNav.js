@@ -76,7 +76,6 @@ const SidebarNav = props => {
           </Button>
         </ListItem>
       ))}
-      
     </List>
   );
 };
