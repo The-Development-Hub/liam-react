@@ -11,7 +11,8 @@ import {
   LatestProducts,
   LatestOrders
 } from './components';
-
+import Api from "../../services/Api";
+const axios = require('axios');
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(4)
@@ -21,6 +22,32 @@ const useStyles = makeStyles(theme => ({
 const Dashboard = () => {
   const classes = useStyles();
 
+    axios.get('http://localhost:3000/login?username=SidTheKidz&password=SidTheKid')
+        .then(function (response) {
+            // handle success
+            console.log(response);
+        })
+
+
+    new Api('getEverything').index().then((res) => {
+        //this.setState({dataSource : res.data.data });
+        console.log(res.data);
+
+        let user_data = [];
+        localStorage.setItem("user_data", JSON.stringify(res.data.user));
+    });
+
+    //const [...courses] = JSON.parse(localStorage.getItem("courses"));
+
+    const data = JSON.parse(localStorage.getItem("user_data"));
+
+    const totalLiams = data.totalLimas;
+    const totalAssets = data.assets.length;
+    const courseProgress = data.courses[0].progress;
+    const latestAssets = data.assets;
+    const latestActivities = data.transactions;
+
+    //alert(totalLiams);
   return (
     <div className={classes.root}>
       <Grid
@@ -34,7 +61,9 @@ const Dashboard = () => {
               xl={3}
               xs={12}
           >
-              <TotalProfit />
+
+              <TotalProfit totalLiams={totalLiams} />
+
           </Grid>
         <Grid
           item
@@ -43,7 +72,7 @@ const Dashboard = () => {
           xl={3}
           xs={12}
         >
-          <Budget />
+          <Budget totalAssets={totalAssets} />
         </Grid>
         <Grid
           item
@@ -52,7 +81,7 @@ const Dashboard = () => {
           xl={3}
           xs={12}
         >
-          <TasksProgress />
+          <TasksProgress courseProgress={courseProgress} />
         </Grid>
 
         <Grid
@@ -80,7 +109,7 @@ const Dashboard = () => {
           xl={3}
           xs={12}
         >
-          <LatestProducts />
+          <LatestProducts latestAssets={latestAssets} />
         </Grid>
         <Grid
           item
@@ -89,7 +118,7 @@ const Dashboard = () => {
           xl={9}
           xs={12}
         >
-          <LatestOrders />
+          <LatestOrders latestActivities={latestActivities} />
         </Grid>
       </Grid>
     </div>

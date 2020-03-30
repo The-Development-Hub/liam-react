@@ -1,0 +1,20 @@
+{
+  "getAllCourses": {
+    "resource": "getAllCourses",
+    "primaryKeyName": "_id"
+  },
+  "login": {
+    "resource": "login",
+    "primaryKeyName": "id"
+  },
+  "getAllAssets": {
+    "resource": "getAllAssets",
+    "primaryKeyName": "url"
+  },
+  "getEverything": {
+    "resource": "getEverything",
+    "primaryKeyName": "url"
+  }
+}
+
+

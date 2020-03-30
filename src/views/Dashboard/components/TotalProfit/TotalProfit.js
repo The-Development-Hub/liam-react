@@ -31,8 +31,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const TotalProfit = props => {
-  const { className, ...rest } = props;
-
+  const { className, totalLiams, ...rest } = props;
   const classes = useStyles();
 
   return (
@@ -58,7 +57,7 @@ const TotalProfit = props => {
               color="inherit"
               variant="h3"
             >
-              L 2000
+              L {totalLiams}
             </Typography>
           </Grid>
           <Grid item>
@@ -73,7 +72,8 @@ const TotalProfit = props => {
 };
 
 TotalProfit.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  totalLiams: PropTypes.string
 };
 
 export default TotalProfit;

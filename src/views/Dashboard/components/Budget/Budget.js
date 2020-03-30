@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Budget = props => {
-  const { className, ...rest } = props;
+  const { className, totalAssets , ...rest } = props;
 
   const classes = useStyles();
 
@@ -64,7 +64,7 @@ const Budget = props => {
             >
               DIGITAL ASSETS
             </Typography>
-            <Typography variant="h3">16</Typography>
+            <Typography variant="h3"> {totalAssets} </Typography>
           </Grid>
           <Grid item>
             <Avatar className={classes.avatar}>
@@ -93,7 +93,8 @@ const Budget = props => {
 };
 
 Budget.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+    totalAssets: PropTypes.string
 };
 
 export default Budget;

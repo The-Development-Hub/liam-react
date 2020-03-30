@@ -37,11 +37,11 @@ const useStyles = makeStyles(() => ({
 }));
 
 const LatestProducts = props => {
-  const { className, ...rest } = props;
+  const { className, latestAssets , ...rest } = props;
 
   const classes = useStyles();
 
-  const [products] = useState(mockData);
+  const [...products] = latestAssets;
 
   return (
     <Card
@@ -58,7 +58,7 @@ const LatestProducts = props => {
           {products.map((product, i) => (
             <ListItem
               divider={i < products.length - 1}
-              key={product.id}
+              key={product.url}
             >
               <ListItemAvatar>
                 <img
@@ -69,7 +69,7 @@ const LatestProducts = props => {
               </ListItemAvatar>
               <ListItemText
                 primary={product.name}
-                secondary={`Published ${product.updatedAt.fromNow()}`}
+                secondary={`Published today`}
               />
               <IconButton
                 edge="end"
@@ -97,7 +97,8 @@ const LatestProducts = props => {
 };
 
 LatestProducts.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  latestAssets: PropTypes.array.isRequired
 };
 
 export default LatestProducts;

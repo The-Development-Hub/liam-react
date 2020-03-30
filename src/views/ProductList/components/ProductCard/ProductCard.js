@@ -40,21 +40,30 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const ProductCard = props => {
-  const { className, product, ...rest } = props;
+  const { className, course, ...rest } = props;
 
   const classes = useStyles();
+
+    const viewCourseHandler = (data) => {
+        //console.log(title);
+        //alert(data);
+        //let current_course = [];
+        localStorage.setItem("current_course", JSON.stringify(data));
+
+        window.location.href='/course-single';
+    };
 
   return (
     <Card
       {...rest}
       className={clsx(classes.root, className)}
     >
-      <CardContent>
+      <CardContent style={{height: "280px"}}>
         <div className={classes.imageContainer}>
           <img
-            alt="Product"
+            alt="Course_image"
             className={classes.image}
-            src={product.imageUrl}
+            src={course.imageUrl}
           />
         </div>
         <Typography
@@ -62,15 +71,15 @@ const ProductCard = props => {
           gutterBottom
           variant="h4"
           style={{paddingTop: "12px"}}
-          /* onclick={}*/
+          onClick={viewCourseHandler.bind(this, course)}
         >
-          {product.title}
+          {course.title}
         </Typography>
         <Typography
           align="center"
           variant="body1"
         >
-            {product.description}
+            {course.description}
         </Typography>
       </CardContent>
       <Divider />
@@ -83,12 +92,12 @@ const ProductCard = props => {
             className={classes.statsItem}
             item
           >
-            <AccessTimeIcon className={classes.statsIcon} />
+            {/*<AccessTimeIcon className={classes.statsIcon} />*/}
             <Typography
               display="inline"
               variant="body2"
-            >
-              Updated 2hr ago
+             >
+                <span style={{fontWeight: '600', fontSize: '19px'}}>L</span> {course.limas}
             </Typography>
           </Grid>
           <Grid
@@ -100,7 +109,7 @@ const ProductCard = props => {
               display="inline"
               variant="body2"
             >
-              {product.totalDownloads} Views
+              {course.totalDownloads} Views
             </Typography>
           </Grid>
         </Grid>
@@ -111,7 +120,7 @@ const ProductCard = props => {
 
 ProductCard.propTypes = {
   className: PropTypes.string,
-  product: PropTypes.object.isRequired
+    course: PropTypes.object.isRequired
 };
 
 export default ProductCard;

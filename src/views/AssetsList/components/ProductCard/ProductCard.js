@@ -14,7 +14,8 @@ import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import DownloadIcon from '@material-ui/icons/ThumbUp';
 import Views from '@material-ui/icons/Visibility';
-
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 const useStyles = makeStyles(theme => ({
   root: {},
   imageContainer: {
@@ -53,7 +54,7 @@ const ProductCard = props => {
       <CardContent>
         <div className={classes.imageContainer}>
           <img
-            alt="Product"
+            alt="Asset_photo"
             className={classes.image}
             src={product.imageUrl}
           />
@@ -80,6 +81,20 @@ const ProductCard = props => {
           container
           justify="space-between"
         >
+            <Grid
+                className={classes.statsItem}
+                item
+            >
+
+                <ArrowUpwardIcon className={classes.differenceIcon} />
+                <Typography
+                    className={classes.differenceValue}
+                    variant="body2"
+                >
+                    {product.setLimasCost}L
+                </Typography>
+                <ArrowDownwardIcon className={classes.differenceIcon} />
+            </Grid>
           <Grid
             className={classes.statsItem}
             item
@@ -89,9 +104,10 @@ const ProductCard = props => {
               display="inline"
               variant="body2"
             >
-                {product.totallikes} Likes
+                {product.likes}
             </Typography>
           </Grid>
+
           <Grid
             className={classes.statsItem}
             item
@@ -101,7 +117,7 @@ const ProductCard = props => {
               display="inline"
               variant="body2"
             >
-              {product.totalDownloads} Downloads
+              {product.downloads}
             </Typography>
           </Grid>
         </Grid>

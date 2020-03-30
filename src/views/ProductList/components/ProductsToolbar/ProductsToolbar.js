@@ -40,12 +40,12 @@ const ProductsToolbar = props => {
     >
       <div className={classes.row}>
         <span className={classes.spacer} />
-        <Button
+        {/*<Button
           color="primary"
           variant="contained"
         >
           Publish Courses
-        </Button>
+        </Button>*/}
       </div>
       <div className={classes.row}>
         <SearchInput
