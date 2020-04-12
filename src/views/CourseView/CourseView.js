@@ -25,8 +25,8 @@ const useStyles = makeStyles(theme => ({
 const CourseView = () => {
   const classes = useStyles();
 
-  const [products] = useState(mockData);
-
+  const products = JSON.parse(localStorage.getItem("current_course"));
+  //console.log(JSON.parse(localStorage.getItem("current_course")));
   return (
     <div className={classes.root}>
 
@@ -35,17 +35,18 @@ const CourseView = () => {
           container
           spacing={2}
         >
-          {products.map(product => (
+
+
             <Grid
               item
-              key={product.id}
+              key={products._id}
               lg={12}
               md={12}
               xs={12}
             >
-              <ProductCard product={product} />
+              <ProductCard product={products} />
             </Grid>
-          ))}
+
         </Grid>
       </div>
 

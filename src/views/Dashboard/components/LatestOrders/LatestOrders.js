@@ -51,11 +51,11 @@ const statusColors = {
 };
 
 const LatestOrders = props => {
-  const { className, ...rest } = props;
+  const { className, latestActivities , ...rest } = props;
 
   const classes = useStyles();
 
-  const [orders] = useState(mockData);
+  const [...orders] = latestActivities;
 
   return (
     <Card
@@ -106,7 +106,7 @@ const LatestOrders = props => {
                     key={order.id}
                   >
                     <TableCell>{order.page}</TableCell>
-                    <TableCell>{order.action.name}</TableCell>
+                    <TableCell>{order.action}</TableCell>
                     <TableCell>
                       {moment(order.createdAt).format('DD/MM/YYYY')}
                     </TableCell>
@@ -142,7 +142,8 @@ const LatestOrders = props => {
 };
 
 LatestOrders.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  latestActivities: PropTypes.array.isRequired
 };
 
 export default LatestOrders;

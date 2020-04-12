@@ -6,7 +6,8 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
 import { ProductsToolbar, ProductCard } from './components';
 import mockData from './data';
-
+import Api from "../../services/Api";
+const axios = require('axios');
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(3)
@@ -25,7 +26,24 @@ const useStyles = makeStyles(theme => ({
 const AssetsList = () => {
   const classes = useStyles();
 
-  const [products] = useState(mockData);
+ /* const [products] = useState(mockData);*/
+
+    axios.get('https://liam-cripto.herokuapp.com/login?username=SidTheKidz&password=SidTheKid')
+        .then(function (response) {
+            // handle success
+            console.log(response);
+        })
+
+
+    new Api('getAllAssets').index().then((res) => {
+        //this.setState({dataSource : res.data.data });
+        console.log(res.data);
+
+        let assets = [];
+        localStorage.setItem("assets", JSON.stringify(res.data));
+    });
+
+    const [...products] = JSON.parse(localStorage.getItem("assets"));
 
   return (
     <div className={classes.root}>
