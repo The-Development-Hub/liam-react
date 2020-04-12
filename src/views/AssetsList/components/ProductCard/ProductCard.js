@@ -56,7 +56,7 @@ const ProductCard = props => {
           <img
             alt="Asset_photo"
             className={classes.image}
-            src={product.imageUrl}
+            src={product.url}
           />
         </div>
         <Typography

@@ -28,7 +28,7 @@ const AssetsList = () => {
 
  /* const [products] = useState(mockData);*/
 
-    axios.get('http://localhost:3000/login?username=SidTheKidz&password=SidTheKid')
+    axios.get('https://liam-cripto.herokuapp.com/login?username=SidTheKidz&password=SidTheKid')
         .then(function (response) {
             // handle success
             console.log(response);

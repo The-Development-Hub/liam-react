@@ -29,20 +29,29 @@ const ProductList = () => {
   const classes = useStyles();
 
 
-    axios.get('http://localhost:3000/login?username=SidTheKidz&password=SidTheKid')
+    axios.get('https://liam-cripto.herokuapp.com/login?username=SidTheKidz&password=SidTheKid')
         .then(function (response) {
             // handle success
             console.log(response);
         })
 
+   /* axios.get('https://liam-cripto.herokuapp.com/getAllCourses')
+        .then(function (res) {
+            console.log(res.data);
 
-    new Api('getEverything').index().then((res) => {
+            let courses = [];
+            localStorage.setItem("courses", JSON.stringify(res.data));
+        })*/
+
+
+    new Api('getAllCourses').index().then((res) => {
         //this.setState({dataSource : res.data.data });
         console.log(res.data);
 
         let courses = [];
         localStorage.setItem("courses", JSON.stringify(res.data));
     });
+
 
     const [...courses] = JSON.parse(localStorage.getItem("courses"));
 

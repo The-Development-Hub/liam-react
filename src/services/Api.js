@@ -12,7 +12,8 @@ class Api {
     }
 
     static get apiUrl() {
-        return 'http://localhost:3000';
+        //return 'http://localhost:3000';
+        return 'https://liam-cripto.herokuapp.com';
     }
 
     //login
